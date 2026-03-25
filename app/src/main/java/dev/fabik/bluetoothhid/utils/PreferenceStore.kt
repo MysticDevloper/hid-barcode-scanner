@@ -278,6 +278,16 @@ open class PreferenceStore {
         val DEVELOPER_MODE = booleanPreferencesKey("developer_mode") defaultsTo BuildConfig.DEBUG
         val OCR_COMPAT = booleanPreferencesKey("ocr_compat") defaultsTo false
 
+        // Voice Feedback
+        val VOICE_ENABLED = booleanPreferencesKey("voice_enabled") defaultsTo false
+        val VOICE_LANGUAGE = stringPreferencesKey("voice_language") defaultsTo ""
+        val VOICE_VOLUME = floatPreferencesKey("voice_volume") defaultsTo 1.0f
+        val VOICE_INCLUDE_FORMAT = booleanPreferencesKey("voice_include_format") defaultsTo true
+
+        // Batch Mode
+        val BATCH_MODE_ENABLED = booleanPreferencesKey("batch_mode_enabled") defaultsTo false
+        val BATCH_DELAY = floatPreferencesKey("batch_delay") defaultsTo 100f
+
         // Utility preferences
         val OVERLAY_POS_X = floatPreferencesKey("overlay_pos_x") defaultsTo 0.0f
         val OVERLAY_POS_Y = floatPreferencesKey("overlay_pos_y") defaultsTo 0.0f

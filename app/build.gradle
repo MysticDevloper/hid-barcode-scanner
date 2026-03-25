@@ -10,7 +10,7 @@ final def gitHash = providers.exec {
 }.standardOutput.asText.get().trim()
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 android {

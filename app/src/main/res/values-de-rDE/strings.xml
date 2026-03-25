@@ -357,7 +357,45 @@
     <string name="volume_up">Lautstärke hoch</string>
     <string name="volume_down">Lautstärke runter</string>
     <string name="zoom_level">Zoomstufe (%)</string>
-    <string name="trigger_on_key_release">Auslösen beim Loslassen der Taste</string>
+    <string name="trigger_on_key_release">Auslösen beim loslassen der Taste</string>
+    
+    <!-- Widget strings -->
+    <string name="widget_description">Schnellzugriff auf Barcode-Scanner</string>
+    <string name="widget_last_scan">Noch keine Scans</string>
+    <string name="widget_not_connected">Nicht verbunden</string>
+    <string name="widget_connected">Verbunden</string>
+    <string name="widget_tap_to_scan">Tippen zum Öffnen</string>
+    
+    <!-- Voice Feedback strings -->
+    <string name="voice_feedback">Sprachausgabe</string>
+    <string name="voice_feedback_desc">Gescannte Barcodes laut vorlesen</string>
+    <string name="voice_language">Sprache</string>
+    <string name="voice_language_desc">Sprache für Sprachausgabe</string>
+    <string name="voice_volume">Lautstärke</string>
+    <string name="voice_volume_desc">Sprachausgabe-Lautstärke anpassen</string>
+    <string name="voice_format_announcement">Barcode-Typ ansagen</string>
+    <string name="voice_format_announcement_desc">Barcode-Typ (QR, EAN, etc.) ansagen</string>
+    <string name="voice_success">Scan erfolgreich</string>
+    <string name="voice_scanned">Gescannt: %1$s</string>
+    <string name="voice_format">Format: %1$s</string>
+    
+    <!-- Batch Mode strings -->
+    <string name="batch_mode">Stapelmodus</string>
+    <string name="batch_mode_desc">Mehrere Scans vor dem Senden speichern</string>
+    <string name="batch_queue">Scan-Warteschlange</string>
+    <string name="batch_queue_empty">Warteschlange ist leer</string>
+    <string name="batch_items_count">%1$d Elemente in Warteschlange</string>
+    <string name="batch_send_all">Alle senden</string>
+    <string name="batch_clear">Warteschlange leeren</string>
+    <string name="batch_send_item">Element senden</string>
+    <string name="batch_remove_item">Element entfernen</string>
+    <string name="batch_edit_item">Element bearbeiten</string>
+    <string name="batch_delay">Verzögerung zwischen Elementen</string>
+    <string name="batch_delay_desc">Zeit zwischen dem Senden jedes Barcodes</string>
+    <string name="batch_added_to_queue">Zur Warteschlange hinzugefügt</string>
+    <string name="batch_sending">Stapel wird gesendet…</string>
+    <string name="batch_sent_complete">Stapel erfolgreich gesendet</string>
+    
     <string-array name="volume_keys_actions">
         <item>Nichts</item>
         <item>Wert senden</item>

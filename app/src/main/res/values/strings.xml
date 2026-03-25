@@ -404,4 +404,41 @@
         <item>Toggle zoom</item>
         <item>Trigger focus</item>
     </string-array>
+    
+    <!-- Widget strings -->
+    <string name="widget_description">Quick access to barcode scanner</string>
+    <string name="widget_last_scan">No scans yet</string>
+    <string name="widget_not_connected">Not connected</string>
+    <string name="widget_connected">Connected</string>
+    <string name="widget_tap_to_scan">Tap to open scanner</string>
+    
+    <!-- Voice Feedback strings -->
+    <string name="voice_feedback">Voice feedback</string>
+    <string name="voice_feedback_desc">Speak scanned barcodes aloud</string>
+    <string name="voice_language">Voice language</string>
+    <string name="voice_language_desc">Language for voice output</string>
+    <string name="voice_volume">Voice volume</string>
+    <string name="voice_volume_desc">Adjust voice feedback volume</string>
+    <string name="voice_format_announcement">Include barcode format</string>
+    <string name="voice_format_announcement_desc">Announce barcode type (QR, EAN, etc.)</string>
+    <string name="voice_success">Scan successful</string>
+    <string name="voice_scanned">Scanned: %1$s</string>
+    <string name="voice_format">Format: %1$s</string>
+    
+    <!-- Batch Mode strings -->
+    <string name="batch_mode">Batch mode</string>
+    <string name="batch_mode_desc">Queue multiple scans before sending</string>
+    <string name="batch_queue">Scan queue</string>
+    <string name="batch_queue_empty">Queue is empty</string>
+    <string name="batch_items_count">%1$d items in queue</string>
+    <string name="batch_send_all">Send all</string>
+    <string name="batch_clear">Clear queue</string>
+    <string name="batch_send_item">Send item</string>
+    <string name="batch_remove_item">Remove item</string>
+    <string name="batch_edit_item">Edit item</string>
+    <string name="batch_delay">Delay between items</string>
+    <string name="batch_delay_desc">Time between sending each barcode</string>
+    <string name="batch_added_to_queue">Added to queue</string>
+    <string name="batch_sending">Sending batch…</string>
+    <string name="batch_sent_complete">Batch sent successfully</string>
 </resources>

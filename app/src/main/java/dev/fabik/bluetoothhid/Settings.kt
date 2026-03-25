@@ -50,6 +50,7 @@ import androidx.compose.material.icons.filled.ShutterSpeed
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material.icons.filled.Vibration
+import androidx.compose.material.icons.filled.VoiceOverOff
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
@@ -383,6 +384,29 @@ internal fun CameraSettings(strings: SettingsStrings) {
 internal fun ScannerSettings(strings: SettingsStrings) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
+
+    // Voice Feedback Section
+    SwitchPreference(
+        title = strings[R.string.voice_feedback],
+        desc = strings[R.string.voice_feedback_desc],
+        icon = Icons.Default.VoiceOverOff,
+        preference = PreferenceStore.VOICE_ENABLED
+    )
+
+    SwitchPreference(
+        title = strings[R.string.voice_format_announcement],
+        desc = strings[R.string.voice_format_announcement_desc],
+        icon = Icons.Default.Info,
+        preference = PreferenceStore.VOICE_INCLUDE_FORMAT
+    )
+
+    // Batch Mode Section
+    SwitchPreference(
+        title = strings[R.string.batch_mode],
+        desc = strings[R.string.batch_mode_desc],
+        icon = Icons.AutoMirrored.Filled.Send,
+        preference = PreferenceStore.BATCH_MODE_ENABLED
+    )
 
     CheckBoxPreference(
         title = strings[R.string.code_types],

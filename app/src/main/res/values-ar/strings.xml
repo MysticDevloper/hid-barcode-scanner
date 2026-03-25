@@ -157,6 +157,44 @@
     <string name="volume_down">زر خفض الصوت</string>
     <string name="zoom_level">مستوى التكبير (zoom) (%)</string>
     <string name="trigger_on_key_release">التنفيذ عند رفع إصبعك عن الزر</string>
+    
+    <!-- Widget strings -->
+    <string name="widget_description">وصول سريع لمسح الباركود</string>
+    <string name="widget_last_scan">لا عمليات مسح بعد</string>
+    <string name="widget_not_connected">غير متصل</string>
+    <string name="widget_connected">متصل</string>
+    <string name="widget_tap_to_scan">انقر للفتح</string>
+    
+    <!-- Voice Feedback strings -->
+    <string name="voice_feedback">التغذية الراجعة الصوتية</string>
+    <string name="voice_feedback_desc">قراءة الباركودات الممسوحة بصوت عالٍ</string>
+    <string name="voice_language">لغة الصوت</string>
+    <string name="voice_language_desc">لغة الإخراج الصوتي</string>
+    <string name="voice_volume">مستوى الصوت</string>
+    <string name="voice_volume_desc">ضبط مستوى صوت التغذية الراجعة</string>
+    <string name="voice_format_announcement">تشمل إعلان النوع</string>
+    <string name="voice_format_announcement_desc">الإعلان عن نوع الباركود (QR، EAN، إلخ)</string>
+    <string name="voice_success">تم المسح بنجاح</string>
+    <string name="voice_scanned">تم المسح: %1$s</string>
+    <string name="voice_format">النوع: %1$s</string>
+    
+    <!-- Batch Mode strings -->
+    <string name="batch_mode">وضع الدفعة</string>
+    <string name="batch_mode_desc">تخزين عمليات مسح متعددة قبل الإرسال</string>
+    <string name="batch_queue">قائمة انتظار المسح</string>
+    <string name="batch_queue_empty">القائمة فارغة</string>
+    <string name="batch_items_count">%1$d عنصر في القائمة</string>
+    <string name="batch_send_all">إرسال الكل</string>
+    <string name="batch_clear">مسح القائمة</string>
+    <string name="batch_send_item">إرسال العنصر</string>
+    <string name="batch_remove_item">إزالة العنصر</string>
+    <string name="batch_edit_item">تعديل العنصر</string>
+    <string name="batch_delay">تأخير بين العناصر</string>
+    <string name="batch_delay_desc">الوقت بين إرسال كل باركود</string>
+    <string name="batch_added_to_queue">تمت الإضافة للقائمة</string>
+    <string name="batch_sending">جارٍ إرسال الدفعة…</string>
+    <string name="batch_sent_complete">تم إرسال الدفعة بنجاح</string>
+    
     <string-array name="volume_keys_actions">
         <item>لا شيء</item>
         <item>إرسال القيمة</item>

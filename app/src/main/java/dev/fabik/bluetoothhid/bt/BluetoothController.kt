@@ -92,26 +92,11 @@ class BluetoothController(var context: Context) {
             hostDevice.update { null }
             hidDevice = proxy as? BluetoothHidDevice
 
-            val qos = runBlocking {
-                context.getPreferences(
-                    PreferenceStore.QOS_SERVICE_TYPE,
-                    PreferenceStore.QOS_TOKEN_RATE,
-                    PreferenceStore.QOS_TOKEN_BUCKET_SIZE,
-                    PreferenceStore.QOS_PEAK_BANDWIDTH,
-                    PreferenceStore.QOS_LATENCY,
-                    PreferenceStore.QOS_DELAY_VARIATION
-                ).first()
-            }.let {
-                Log.d(TAG, "Using QoS: $it")
-                BluetoothHidDeviceAppQosSettings(
-                    PreferenceStore.QOS_SERVICE_TYPE.extractEnum(it).value,
-                    PreferenceStore.QOS_TOKEN_RATE.extract(it),
-                    PreferenceStore.QOS_TOKEN_BUCKET_SIZE.extract(it),
-                    PreferenceStore.QOS_PEAK_BANDWIDTH.extract(it),
-                    PreferenceStore.QOS_LATENCY.extract(it),
-                    PreferenceStore.QOS_DELAY_VARIATION.extract(it)
-                )
-            }
+            val qos = BluetoothHidDeviceAppQosSettings(
+                BluetoothHidDeviceAppQosSettings.SERVICE_BEST_EFFORT,
+                800, 9, 0, 11250,
+                BluetoothHidDeviceAppQosSettings.MAX
+            )
 
             hidDevice?.registerApp(
                 Descriptor.SDP_RECORD,
