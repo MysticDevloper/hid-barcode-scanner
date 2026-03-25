@@ -1,251 +1,172 @@
+# HID Barcode Scanner
+
 <div align="center">
-  <a href="https://github.com/Fabi019/hid-barcode-scanner/actions/workflows/android.yml"><img src="https://github.com/Fabi019/hid-barcode-scanner/actions/workflows/android.yml/badge.svg" /></a>
-  <a href="https://play.google.com/store/apps/details?id=dev.fabik.bluetoothhid&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="https://img.shields.io/endpoint?color=brightgreen&logo=google-play&logoColor=white&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Ddev.fabik.bluetoothhid%26l%3DDownloads%26m%3D%24totalinstalls"></a>
-  <img src="https://img.shields.io/badge/dynamic/json?url=https://dlstats.izzyondroid.org/iod-stats-collector/stats/basic/yearly/rolling.json&query=$.[%27dev.fabik.bluetoothhid%27]&label=yearly%20downloads&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAADAFBMVEUA0////wAA0v8A0v8A0////wD//wAFz/QA0/8A0/8A0/8A0/8A0v///wAA0/8A0/8A0/8A0/8A0//8/gEA0/8A0/8B0/4A0/8A0/8A0/+j5QGAwwIA0//C9yEA0/8A0/8A0/8A0/8A0/8A0/+n4SAA0/8A0/8A0/+o6gCw3lKt7QCv5SC+422b3wC19AC36zAA0/+d1yMA0/8A0/+W2gEA0/+w8ACz8gCKzgG7+QC+9CFLfwkA0/8A0////wAA0/8A0/8A0/8A0/+f2xym3iuHxCGq5BoA1P+m2joI0vONyiCz3mLO7oYA0/8M1Piq3Ei78CbB8EPe8LLj9Ly751G77zWQ1AC96UYC0fi37CL//wAA0/8A0////wD//wCp3jcA0/+j3SGj2i/I72Sx4zHE8FLB8zak1kYeycDI6nRl3qEA0/7V7psA0v6WzTa95mGi2RvB5XkPy9zH5YJ3uwGV1yxVihRLiwdxtQ1ZkAf//wD//wD//wD//wD//wCn5gf//wD//wD//wD//wD//wAA0/+h4A3R6p8A0/+X1w565OD6/ARg237n9csz2vPz+gNt37V/vifO8HW68B/L6ZOCwxXY8KRQsWRzhExAtG/E612a1Rd/pTBpmR9qjysduKVhmxF9mTY51aUozK+CsDSA52T//wD//wAA0////wD//wBJ1JRRxFWjzlxDyXRc0pGT1wCG0CWB3VGUzSTh8h6c0TSr5CCJ5FFxvl6s4H3m8xML0/DA5CvK51EX1N+Y2gSt4Dag3ChE3fax2ki68yO57NF10FRZnUPl88eJxhuCxgCz5EOLwEGf1DFutmahzGW98x0W1PGk3R154MHE6bOn69qv3gy92oG90o+Hn07B7rhCmiyMwECv1nO+0pQfwrCo57xF2daXsVhKrEdenQAduaee1Bsjr42z5D9RoCXy+QNovXpy2Z5MtWDO/TiSukaF3UtE1K6j3B4YwLc5wXlzpyIK0u5zy3uJqg4pu5RTpkZmpVKyAP8A0wBHcExHcEyBUSeEAAABAHRSTlP///9F9wjAAxD7FCEGzBjd08QyEL39abMd6///8P/ZWAnipIv/cC6B//7////////L/1Dz/0D///////86/vYnquY3/v///5T//v///17///////////////84S3QNB/8L/////////////7r/////NP////9l/////wPD4yis/x7Ym2lWSP+em////0n////////v///////////////////7//7pdGN3Urr6/+v/6aT////+//H/o2P/1v+7r7jp4PM/3p4g////g///K///481LxO///v////9w////8v/////9/p3J///a+P9v/5KR/+n///+p/xf//8P//wAAe7FyaAAABCZJREFUSMdj+E8iYKBUgwIHnwQ3N7cEHxcH+///VayoAE0Dh41qR7aBnCIQ8MsJKHH9/99czYYMWlA0cIkJGjMgAKfq//9RNYzIgLcBWYOTiCgDMhDn+B9bh6LebiWyH6L5UZQzONoAHWSHoqEpDkkDsyKqelv1//9rG1HUN9YihZK9AKp6BkG+/6xNqA5ajhSsCkrIipmYGGRa//9vQXVQXSySBnkWJOUMfn5Myuz/G3hR1NdEIUUchwiy+bkTsg4dbW/fu6W/e1c3XMMy5JiOZkFxUFZo74mgKTqaKXu0+2HqVwkja3BH9kFu361JwcHTfPJD4mdfe8ULAdVRyGlJAcVFfg+CQOozZ4XrJ85+JgwBsVXIGriQw5Tp4ZScezd8JiWnBupru30qwJZa+ZAjmWlC8fUZM4qB6kPnLNSPLMWqQQ5ZQ5aOzs1HmamBaQHzFs6y+qAmJCTE8f9/QgKSBg4DJPWc6zVDQkIC09JkZSPD38kukpExFpT4z67uYI/QwCOOCCK/izvu5CWl6AcEWMnKWml7LWbKZfH9/99UkknQHhGsynDz+65eWXv3/JmJrq5eXienVlRUfH/z8VvCf45soKQIH1yDEQsszrp6gwq9C73T87xcXadKl5TkFev4A/2tygmSBqYXqAYJmK+ZuoJydDR1vP09DA0NOy2kpdML81+U/heCpH1JU3jig7lJ5nKOT4i/t6ZHkqGzs4lJmIVHfrj+JR4HqLQSD0yDkCNEpGNn5ix9D03/eJdElTZdKV2TpNOhkwt8YUlNUgimgV0dLMBvf1gz1MolPd5FRcVNSkpDQ8owJeBCDyIhrIDnOD5QcuIU+3/2QKSs9laQ+noNLS0zLWdtqyP7mBAFAw88TwsJgMuJYweBGjYngtWbmeuZOW+bvNQToUFOAlFqOBk4Ov3/L7Z60/aN0p1tUhpa5nqWlub7C3p2I9QzyAghlUvczOz/1fhzPT3XSIfpSmmYAdVbmm1gV0dSz8DSilpUQsqCddIWIA3meuZaJqdMJZEzl6gRqgZIWZAxUdoizERXN8yi5MltcZTChzMaRQM3JNUWHS8rL/+yaPGvMmvr5ywoGoxtkDWwQ+Pb89ycBeWfGSJeL/la+RS1eOPnRtbQKgMRjZg+t8x6PkP273nWQAoFOPAgaeAThKXAmXMrK39Kmr5fsuBlBqoXfJGLe3VbmHjG9Mczi9T//3h7vygXtcDlQtJg44iQiIjIBRbGPO7gghPJy0ZIxT2HOLIUgwxQzsgYrUR350HSIMaJLidhgKY+mw+pflBDrX8E7OGBjPCAPc76gQFSTqAIiYrb/8dRP4CyosJ/rmwU5XIxHMilt4QBJwsSkBMClxOQULBlkRRwEONmR2kJcDGjADX2/+xO8r5iqjExqmLyrWpcPFRta1BfAwCtyN3XpuJ4RgAAAABJRU5ErkJggg==">
-  <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/Fabi019/hid-barcode-scanner/total">
-  <a href="https://github.com/Fabi019/hid-barcode-scanner/actions/workflows/test.yml"><img src="https://github.com/Fabi019/hid-barcode-scanner/actions/workflows/test.yml/badge.svg" /></a>
-
-  <br/>
-  <br/>
-
+  
   <img alt="App Logo" src="app/src/main/ic_launcher-playstore.png" width="100" />
 
   <h1>HID Barcode Scanner</h1>
+  
+  ![Android](https://img.shields.io/badge/Android-9%2B-brightgreen)
+  ![License](https://img.shields.io/badge/License-GPL--3.0-blue)
+  ![GitHub Stars](https://img.shields.io/github/stars/MysticDevloper/hid-barcode-scanner)
+  ![GitHub Forks](https://img.shields.io/github/forks/MysticDevloper/hid-barcode-scanner)
+
 </div>
 
+---
 
-Android app for scanning barcodes with the phone camera and sending them to a PC via bluetooth. No
-special software is required on the PC as this app uses the BluetoothHID API available on devices
-running Android 9 or greater.
+## Credits & Attribution
+
+> **This project is a fork of the amazing work by [Fabi019](https://github.com/Fabi019)!**
+>
+> The original [HID Barcode Scanner](https://github.com/Fabi019/hid-barcode-scanner) was created by **Fabian** (@Fabi019). This fork builds upon his excellent foundation to add new features while maintaining the core functionality that makes the app great.
+>
+> **[⭐ Star the original repo here](https://github.com/Fabi019/hid-barcode-scanner)**
+
+---
+
+## About This Fork
+
+This enhanced fork adds the following features on top of the original:
+
+| New Feature | Description |
+|-------------|-------------|
+| Home Screen Widget | Quick scan access from your home screen |
+| Voice Feedback | Audio announcement of scanned barcodes |
+| Batch Scanning Mode | Queue multiple scans before sending |
+| Bug Fixes | Performance and stability improvements |
 
 ## Features
 
-- Supports a wide range of Linear and 2D-Codes thanks to
-  the [zxing-cpp](https://github.com/zxing-cpp/zxing-cpp) library
-- Doesn't require any internet connection
-- History feature that allows exporting the session as text, JSON or CSV
-- Multiple different keyboard layouts to choose from
-- Large amount of customization for different use-cases
-    - Extra keys like \n or \t
-    - Template engine to send additional special keys including modifier combinations
-    - Regex filtering of codes with support for capture group extraction
-    - JavaScript engine to implement custom logic based on the value and type
-    - Auto connect with last device
-    - Auto send on detection
-    - And much more
+### Core Features
+- Scan barcodes using your phone's camera
+- Send scanned data to PC via Bluetooth HID (no PC software needed)
+- Works on Android 9+ devices
+- No internet connection required
+- Supports all major barcode formats (QR, Code128, EAN, UPC, etc.)
+
+### Home Screen Widget
+Quick access to your scanner from anywhere on your phone!
+- Shows connection status
+- Displays last scanned code
+- One-tap to open scanner
+- Works offline
+
+### Voice Feedback
+Never miss a scan with audio announcements!
+- Announces scanned barcode value
+- Optional barcode format announcement (QR, EAN, etc.)
+- Multiple language support
+- Adjustable volume
+
+### Batch Scanning Mode
+Scan multiple items efficiently!
+- Queue multiple barcodes before sending
+- Send all queued items with one tap
+- Configurable delay between items
+- Edit or remove items from queue
+
+### Original Features
+- Scan history with export (Text, JSON, CSV)
+- Multiple keyboard layouts
+- Template engine with custom placeholders
+- Regex filtering and capture groups
+- JavaScript processing
+- Auto-connect with last device
+- Auto-send on detection
 
 ## Screenshots
 
-Device list and Scanner screen. If you don't want to connect with any device now and just want to
-try out the scanner, pressing the 'Skip'-Button at the bottom of the paired devices will bring you
-directly to the scanner.
+| Devices | Scanner |
+|:-------:|:-------:|
+| ![Devices](img/devices.png) | ![Scanner](img/main.png) |
 
-Otherwise the app tries to connect with the selected device and automatically sends you to the
-scanner once connected.
+## Installation
 
-<img alt="Devices" src="img/devices.png" width="200px" /> <img alt="Main" src="img/main.png" width="200px" />
+### Build from Source
 
-All configurable Settings. *(Newer versions might contain more or less settings as shown in the
-pictures)*
+```bash
+# Clone the repository
+git clone https://github.com/MysticDevloper/hid-barcode-scanner.git
+cd hid-barcode-scanner
 
-<img alt="Settings" src="img/settings1.png" width="200px" /> <img alt="Settings" src="img/settings2.png" width="200px" />
+# Build debug APK
+./gradlew assembleDebug
 
-## Download
+# APK will be at: app/build/outputs/apk/debug/app-debug.apk
+```
 
-<div>
-  <img alt="F-Droid Version" src="https://img.shields.io/f-droid/v/dev.fabik.bluetoothhid">
-  <img alt="IzzyOnDroid" src="https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/dev.fabik.bluetoothhid&label=IzzyOnDroid">
-  <img alt="GooglePlay" src="https://img.shields.io/endpoint?url=https://play.cuzi.workers.dev/play?i=dev.fabik.bluetoothhid&gl=US&hl=en&label=PlayStore&m=$version">
-  <img alt="GitHub" src="https://img.shields.io/github/v/release/Fabi019/hid-barcode-scanner?include_prereleases&label=GitHub">
-</div>
+## Supported Barcode Types
 
-[<img src="https://f-droid.org/badge/get-it-on.png" width='200px'>](https://f-droid.org/packages/dev.fabik.bluetoothhid)
-[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it at IzzyOnDroid" width='200px'>](https://apt.izzysoft.de/packages/dev.fabik.bluetoothhid)
-[<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='200px'/>](https://play.google.com/store/apps/details?id=dev.fabik.bluetoothhid)
-[<img src="https://raw.githubusercontent.com/rubenpgrady/get-it-on-github/refs/heads/main/get-it-on-github.png" width='200px'>](https://github.com/Fabi019/hid-barcode-scanner/releases)
+| Linear Codes | 2D Codes |
+|:------------:|:--------:|
+| EAN-8, EAN-13 | QR Code |
+| UPC-A, UPC-E | Data Matrix |
+| Code 39, Code 93 | Aztec |
+| Code 128 | PDF 417 |
+| ITF | MaxiCode |
+| Codabar | DotCode |
+| RSS-14 | |
 
-> [!NOTE]
-> Google signs the app on the Play Store with a different key. Because of this, once you install the app from Google Play, you can only switch to another source by uninstalling the app first.
+## Multi-Language Support
 
-### Download nightly builds from [CI](https://github.com/Fabi019/hid-barcode-scanner/actions/workflows/test.yml)
+- English (default)
+- German (Deutsch)
+- Arabic (العربية)
+- Polish (Polski)
 
-Please note that the CI version might be unstable and that the builds are not signed (debug
-builds), thus requiring you to install them on your phone using *ADB*. The download links below
-are using *nightly.link* to provide the files because GitHub doesn't allow to download files from
-actions without being logged in.
+## Tech Stack
 
-- Latest APK (Debug): [here](https://nightly.link/Fabi019/hid-barcode-scanner/workflows/test/main/APK%28s%29%20debug%20generated.zip)
+- **Language:** Kotlin
+- **Min SDK:** 29 (Android 9)
+- **Target SDK:** 34 (Android 14)
+- **Barcode Library:** ZXing C++
+- **UI:** Jetpack Compose
+- **Architecture:** MVVM with Clean Architecture
 
-## Troubleshooting
+## Project Structure
 
-If you are unable to connect with a device you can try either of the steps below depending on how
-the app behaves.
-If these don't help, feel free to open a new issue and describe your problem in detail.
-
-### Connection dialog visible, but no connection possible
-
-This is most likely caused because the phone was paired with the PC previously and now doesn't
-accept a new type of connection request.
-
-***Solution:***
-
-1. Make sure to first unpair the PC on the phone either from within the app or from the system
-   Bluetooth settings
-2. Remove the phone from the PC device list.
-   On Windows you can either do this through the device manager (look under the Bluetooth category)
-   and choose *Uninstall Device* or using the device list in the settings app.
-3. In the app now search for new devices and click on the target PC (This step could be important so
-   that the phone can tell the PC the new device type)
-4. A pairing request should show up and you may need to confirm a pin on both sides
-5. After that the connection should be successfully established
-
-### Nothing happens when clicking on a device
-
-If there is not even a connection dialog when clicking on a device. This means that the registered
-Bluetooth proxy was interrupted. Normally it should be connected again right away but in some cases
-this might not happen.
-
-***Solution:***
-
-Restart the app. When launching again, there should be a small message at the bottom of the screen
-that says the Bluetooth proxy was successfully connected. Otherwise you may have to toggle bluetooth
-or restart your device. This could also mean that your device does not support the Bluetooth HID profile.
-To test this, search for the app "Bluetooth HID Profile Tester" in the PlayStore and see what the result is.
-If the test is not successful, unfortunately your device is not supported.
+```
+app/
+├── src/main/
+│   ├── java/dev/fabik/bluetoothhid/
+│   │   ├── bt/           # Bluetooth HID implementation
+│   │   ├── ui/           # UI components
+│   │   ├── utils/        # Utilities (VoiceFeedback, Batch)
+│   │   ├── widget/       # Home screen widget
+│   │   ├── Scanner.kt    # Main scanner logic
+│   │   ├── Settings.kt   # Settings management
+│   │   └── Devices.kt   # Device management
+│   └── res/
+│       ├── values/       # English strings
+│       ├── values-de-rDE/ # German
+│       ├── values-ar/    # Arabic
+│       └── values-pl-rPL/ # Polish
+```
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open a new issue with the tag "enhancement".
-
-1. Fork the Project
-2. Clone/Open the Repository in Android Studio
-3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the Branch (`git push origin feature/AmazingFeature`)
-6. Open a Pull Request
-
-### Adding new keyboard layout
-
-When the app sends a code to the connected device it doesn't send characters directly.
-Instead the app works by sending raw HID-codes to the connected device (The same way a USB-keyboard
-behaves).
-It is then up to the connected device to interpret this HID-code depending on the layout that is
-currently selected in the OS.
-This means, that if a scanned barcode contains the character 'Z', the app needs to know the keyboard
-layout that the host PC expects (QWERTZ/QWERTY) to send the right HID-code that result in that
-character.
-To solve this the layout in the app must match the selected layout in the PC.
-
-The app already implements a basic set of keyboard layouts to choose from.
-If you want to add a new keyboard layout the following steps might help you:
-
-1. The first step is to create the actual keyboard layout file, for this a great guide already
-   exists in the layout for the [polish keyboard](app/src/main/assets/keymaps/pl.layout).
-   The layout file always consists of a list of characters with the hid code and modifier.
-2. Add the name of the layout to the `<string-array name="keyboard_layout_values">` for every
-   available language under `app/src/main/res/values-*/strings.xml`
-3. Extend the `KeyboardLayout` enum
-   in [PreferenceStore.kt](https://github.com/Fabi019/hid-barcode-scanner/blob/f62141654e3204b9e2e3ca1aee63a4822f51361a/app/src/main/java/dev/fabik/bluetoothhid/utils/PreferenceStore.kt#L46).
-   The placement of the entry should match the positions in `keyboard_layout_values` and the value is the name of
-   the layout file without extension (usually two letters)
-
-## Connection Modes
-
-The app supports two connection modes: **HID** (default) and **RFCOMM** (Serial Port Profile). While HID mode works immediately by emulating a keyboard, RFCOMM mode requires additional setup and may need software on your PC to receive data.
-
-### When to use RFCOMM mode
-
-- **Non-intrusive operation:** RFCOMM sends data invisibly in the background without interfering with the user's current work, while HID mode simulates keyboard input that can disrupt typing or active applications
-- When you need raw text data instead of keyboard input simulation
-- For integration with custom applications that read from COM ports
-- When HID mode doesn't work due to compatibility issues
-- **Professional barcode scanner replacement:** Many commercial barcode scanners use COM port mode to avoid interrupting the user's workflow
-
-### Setting up RFCOMM mode
-
-1. **Enable RFCOMM mode:**
-   - Open the app settings
-   - Change "Connection Mode" from "HID Keyboard" to "RFCOMM (SPP)"
-
-2. **Pair your devices:**
-   - Unpair your phone from PC (both sides) if previously connected
-   - Remove phone from PC Bluetooth device list
-   - In the app, search for devices and connect to your PC
-   - Confirm pairing on both devices
-
-3. **Verify COM port creation:**
-   - On Windows: Go to Device Manager → Ports (COM & LPT)
-   - You should see "Standard Serial over Bluetooth link" with a COM port number
-   - If not visible, try unpairing and re-pairing using the app
-
-4. **Receiving data on PC:**
-   - **Option A:** Use terminal software (PuTTY, RealTerm, Arduino IDE Serial Monitor)
-   - **Option B:** Write custom software to read from the COM port
-   - **Option C:** Use PowerShell: `[System.IO.Ports.SerialPort]::GetPortNames()` to list ports
-
-### Troubleshooting RFCOMM
-
-**No COM port appears:**
-- Unpair devices completely and re-pair using the app (not Windows settings)
-- Ensure "RFCOMM (SPP)" mode is selected before pairing
-- **Manual COM port management:** If automatic port creation fails:
-  1. Go to Windows Bluetooth settings → More Bluetooth options → COM Ports tab
-  2. Click "Add" → Select "Outgoing" port type
-  3. Choose your phone from device list → Select "Barcode Scanner" service
-  4. Click OK to create the COM port
-
-**Can't read data from COM port:**
-- Verify the correct COM port number in Device Manager
-- Check if another application is already using the port
-- For Bluetooth SPP, baud rate setting is usually ignored, but some software may require any value
-
-**Technical details:**
-- **Protocol:** Bluetooth SPP (Serial Port Profile)
-- **UUID:** `00001101-0000-1000-8000-00805F9B34FB`
-- **Data encoding:** UTF-8
-- **Connection:** Bidirectional (app can send and receive data)
-- **Baud rate:** Not applicable (Bluetooth protocol handles data transfer)
-
-**For developers:**
-Sample Python code to read from RFCOMM:
-```python
-import serial
-port = serial.Serial('COM3')  # Baud rate not needed for Bluetooth SPP
-while True:
-    data = port.readline().decode('utf-8').strip()
-    print(f"Received: {data}")
-```
-
-Sample C# code using System.IO.Ports:
-```csharp
-using System.IO.Ports;
-
-SerialPort port = new SerialPort("COM3");
-port.Open();
-while (true) {
-    string data = port.ReadLine();
-    Console.WriteLine($"Received: {data}");
-}
-```
-
-**Recommended for C# developers:** [InTheHand.Net.Bluetooth](https://github.com/inthehand/32feet) library provides better Bluetooth support that allows You more robust connection handling compared to System.IO.Ports.
-
-**Custom RFCOMM implementations:** If you need to adapt the RFCOMM data transmission to simulate specific physical COM scanner behavior (custom protocols, special formatting, etc.), we're open to implementing these features. Please open an issue describing your use case.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-Copyright (C) 2023-2026 Fabi019
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+## Acknowledgments
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+| Project | Description | Link |
+|---------|-------------|------|
+| **Original App** | The foundation of this project - an amazing Bluetooth HID barcode scanner | [Fabi019/hid-barcode-scanner](https://github.com/Fabi019/hid-barcode-scanner) |
+| **ZXing C++** | Multi-format 1D/2D barcode image processing library | [zxing-cpp](https://github.com/zxing-cpp/zxing-cpp) |
+| **Google ML Kit** | On-device barcode scanning | [ML Kit Barcode](https://developers.google.com/ml-kit/vision/barcode-scanning) |
 
-*Google Play and the Google Play logo are trademarks of Google LLC.*
+---
+
+<div align="center">
+  
+  **Star this repo if you find it useful!**
+  
+  ![GitHub stars](https://img.shields.io/github/stars/MysticDevloper/hid-barcode-scanner?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/MysticDevloper/hid-barcode-scanner?style=social)
+
+</div>
