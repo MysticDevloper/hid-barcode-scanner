@@ -363,3 +363,78 @@
         <item>5s</item>
     </string-array>
 </resources>
+
+    <!-- Widget strings -->
+    <string name="widget_description">Szybki dostęp do skanera kodów</string>
+    <string name="widget_last_scan">Brak skanów</string>
+    <string name="widget_not_connected">Nie połączono</string>
+    <string name="widget_connected">Połączono</string>
+    <string name="widget_tap_to_scan">Stuknij, aby otworzyć skaner</string>
+    
+    <!-- Voice Feedback strings -->
+    <string name="voice_feedback">Informacje głosowe</string>
+    <string name="voice_feedback_desc">Głośno odczytuj zeskanowane kody</string>
+    <string name="voice_language">Język głosu</string>
+    <string name="voice_language_desc">Język komunikatów głosowych</string>
+    <string name="voice_volume">Głośność głosu</string>
+    <string name="voice_volume_desc">Regulacja głośności informacji głosowych</string>
+    <string name="voice_format_announcement">Zapowiedziany format kodu</string>
+    <string name="voice_format_announcement_desc">Zagłosuj typ kodu (QR, EAN, itp.)</string>
+    <string name="voice_success">Skanowanie udane</string>
+    <string name="voice_scanned">Zeskanowano: %1$s</string>
+    <string name="voice_format">Format: %1$s</string>
+    
+    <!-- Batch Mode strings -->
+    <string name="batch_mode">Tryb wsadowy</string>
+    <string name="batch_mode_desc">Kolejkuj wiele skanów przed wysłaniem</string>
+    <string name="batch_queue">Kolejka skanów</string>
+    <string name="batch_queue_empty">Kolejka jest pusta</string>
+    <string name="batch_items_count">%1$d elementów w kolejce</string>
+    <string name="batch_send_all">Wyślij wszystko</string>
+    <string name="batch_clear">Wyczyść kolejkę</string>
+    <string name="batch_send_item">Wyślij element</string>
+    <string name="batch_remove_item">Usuń element</string>
+    <string name="batch_edit_item">Edytuj element</string>
+    <string name="batch_delay">Opóźnienie między elementami</string>
+    <string name="batch_delay_desc">Czas między wysyłaniem każdego kodu</string>
+    <string name="batch_added_to_queue">Dodano do kolejki</string>
+    <string name="batch_sending">Wysyłanie wsadowe…</string>
+    <string name="batch_sent_complete">Wysyłanie wsadowe zakończone</string>
+</r
+    <!-- Widget strings -->
+    <string name="widget_description">Szybki dostęp do skanera kodów</string>
+    <string name="widget_last_scan">Brak skanów</string>
+    <string name="widget_not_connected">Nie połączono</string>
+    <string name="widget_connected">Połączono</string>
+    <string name="widget_tap_to_scan">Stuknij, aby otworzyć skaner</string>
+    
+    <!-- Voice Feedback strings -->
+    <string name="voice_feedback">Informacje głosowe</string>
+    <string name="voice_feedback_desc">Głośno odczytuj zeskanowane kody</string>
+    <string name="voice_language">Język głosu</string>
+    <string name="voice_language_desc">Język komunikatów głosowych</string>
+    <string name="voice_volume">Głośność głosu</string>
+    <string name="voice_volume_desc">Regulacja głośności informacji głosowych</string>
+    <string name="voice_format_announcement">Zapowiedziany format kodu</string>
+    <string name="voice_format_announcement_desc">Zagłosuj typ kodu (QR, EAN, itp.)</string>
+    <string name="voice_success">Skanowanie udane</string>
+    <string name="voice_scanned">Zeskanowano: %1$s</string>
+    <string name="voice_format">Format: %1$s</string>
+    
+    <!-- Batch Mode strings -->
+    <string name="batch_mode">Tryb wsadowy</string>
+    <string name="batch_mode_desc">Kolejkuj wiele skanów przed wysłaniem</string>
+    <string name="batch_queue">Kolejka skanów</string>
+    <string name="batch_queue_empty">Kolejka jest pusta</string>
+    <string name="batch_items_count">%1$d elementów w kolejce</string>
+    <string name="batch_send_all">Wyślij wszystko</string>
+    <string name="batch_clear">Wyczyść kolejkę</string>
+    <string name="batch_send_item">Wyślij element</string>
+    <string name="batch_remove_item">Usuń element</string>
+    <string name="batch_edit_item">Edytuj element</string>
+    <string name="batch_delay">Opóźnienie między elementami</string>
+    <string name="batch_delay_desc">Czas między wysyłaniem każdego kodu</string>
+    <string name="batch_added_to_queue">Dodano do kolejki</string>
+    <string name="batch_sending">Wysyłanie wsadowe…</string>
+    <string name="batch_sent_complete">Wysyłanie wsadowe zakończone</string>
+</resources>
